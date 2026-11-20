@@ -90,6 +90,6 @@ jobs:
 
       - name: Trigger npm publish
         if: steps.check.outputs.has_changes == 'true'
-        run: gh workflow run "Publish to npm" --ref master
+        run: gh workflow run "Publish to npm" --ref master -f tag="v${{ steps.bump.outputs.version }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
