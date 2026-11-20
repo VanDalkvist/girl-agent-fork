@@ -1,9 +1,7 @@
-name: Auto-release (hourly)
+name: Release (manual)
 
 on:
-  schedule:
-    - cron: "0 * * * *" # каждый час
-  workflow_dispatch: # ручной запуск
+  workflow_dispatch:
 
 permissions:
   contents: write
